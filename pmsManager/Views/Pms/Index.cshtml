@@ -1,0 +1,39 @@
+﻿@model IEnumerable<pmsManager.Models.Pms>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Pms
+        </th>
+        <th>
+            Managers
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pmsName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numberOfManagers)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.pmsId }) |
+            @Html.ActionLink("Imp/Exp Formats", "Index", "ImpExp", new { id=item.pmsId }, null) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.pmsId })
+        </td>
+    </tr>
+}
+
+</table>

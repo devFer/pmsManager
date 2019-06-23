@@ -1,0 +1,50 @@
+﻿@model IEnumerable<pmsManager.Models.ImpExpAssociated>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = @Model.First().PmsId}, null)
+</p>
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Export 
+        </th>
+        <th>
+            Import
+        </th>
+        <th>
+            SysFormat
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(m => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(m => item.isExport)
+        </td>
+        <td>
+            @Html.DisplayFor(m => item.isImport)
+        </td>
+        <td>
+            @Html.DisplayFor(m => item.sysFormat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

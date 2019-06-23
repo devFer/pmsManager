@@ -1,0 +1,29 @@
+﻿@model pmsManager.Models.Pms
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pms</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pmsName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pmsName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.numberOfManagers)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.numberOfManagers)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.pmsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,46 @@
+﻿@model pmsManager.Models.Pms
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Pms</legend>
+
+        @Html.HiddenFor(model => model.pmsId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pmsName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pmsName)
+            @Html.ValidationMessageFor(model => model.pmsName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numberOfManagers)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numberOfManagers)
+            @Html.ValidationMessageFor(model => model.numberOfManagers)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
