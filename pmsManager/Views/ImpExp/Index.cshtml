@@ -1,12 +1,13 @@
 ﻿@model IEnumerable<pmsManager.Models.ImpExpAssociated>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Import/Export Formats";
 }
 
-<h2>Index</h2>
+<h2>Import/Export Formats</h2>
 
 <p>
+    @Html.ActionLink("Back", "Index", "Pms", null, null)
     @Html.ActionLink("Create New", "Create", new { id = @Model.First().PmsId}, null)
 </p>
 <table>

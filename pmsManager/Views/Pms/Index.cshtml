@@ -1,12 +1,13 @@
 ﻿@model IEnumerable<pmsManager.Models.Pms>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Pms List";
 }
 
-<h2>Index</h2>
+<h2>Pms List</h2>
 
 <p>
+    @Html.ActionLink("Home", "Index", "Home", null, null)
     @Html.ActionLink("Create New", "Create")
 </p>
 <table>

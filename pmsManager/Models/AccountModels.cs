@@ -43,7 +43,7 @@ namespace pmsManager.Models
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
-        [Required]
+        [DataType(DataType.EmailAddress)]
         [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
 
@@ -62,7 +62,6 @@ namespace pmsManager.Models
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
-        [Required]
         [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
 
